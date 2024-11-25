@@ -37,7 +37,7 @@
                 const text = document.getElementById('text').value;
                 const targetLanguage = document.getElementById('target_language').value;
 
-                const response = await fetch('https://khptranslation.up.railway.app/translate', {
+                const response = await fetch('https://translation-api-two.vercel.app/translate', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ text, target_language: targetLanguage })
