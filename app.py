@@ -5,6 +5,10 @@ from googletrans import Translator
 app = Flask(__name__)
 CORS(app)  # Enable CORS
 translator = Translator()
+@app.route('/')
+def home():
+    return "Welcome"
+
 
 @app.route('/translate', methods=['POST'])
 def translate_text():
@@ -27,4 +31,5 @@ def translate_text():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(host='khptranslation.up.railway.app')
+    app.run(debug=True, port=7100)
+    # app.run(host='khptranslation.up.railway.app')
